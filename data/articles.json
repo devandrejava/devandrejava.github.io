@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "url": "#",
-      "image": "/assets/images/projects/embreve.webp",
-      "title": "Em breve",
-      "description": "Em breve"
-    },
-    {
       "url": "https://www.linkedin.com/pulse/como-foi-tirar-minha-terceira-certifica%C3%A7%C3%A3o-aws-andr%C3%A9-valverde-8gjof/?trackingId=28kR7oEMTTWP2hHTV9H3jA%3D%3D",
       "image": "/assets/images/articles/developer.webp",
       "title": "Como foi tirar minha terceira certificação, AWS Certified Developer — Associate? 😁",
@@ -19,31 +13,31 @@
       "description": "O segundo passo para conseguir ser um Solutions Architect foi dado. Nesse artigo abordo, o que achei da minha segunda certificação em Cloud Computing, a AWS Solutions Architect — Associate, dá Amazon Web Services (AWS) e dicas do que usei, que facilitaram o meu desenvolvimento sobre o assunto. 👍 "
     },
     {
-      "url": "https://www.linkedin.com/posts/andredevts_java-spring-springboot-activity-7207727743482998785-c4Ge?utm_source=share&utm_medium=member_desktop",
+      "url": "https://www.linkedin.com/posts/devandrets_java-spring-springboot-activity-7207727743482998785-c4Ge?utm_source=share&utm_medium=member_desktop",
       "image": "/assets/images/articles/one.webp",
       "title": "Oracle One, uma jornada Pokémon",
       "description": "O que a Oracle e a Alura tem em comum? Eles fazem uma tal de parceria ai chamada Oracle One. Você, quer descobrir o que é? Vem comigo nesse artigo. 😜"
     },
     {
-      "url": "https://www.linkedin.com/posts/andredevts_aws-certification-cloudcertification-activity-7198330808489668608-tXE8?utm_source=share&utm_medium=member_desktop",
+      "url": "https://www.linkedin.com/posts/devandrets_aws-certification-cloudcertification-activity-7198330808489668608-tXE8?utm_source=share&utm_medium=member_desktop",
       "image": "/assets/images/articles/cloud_practitioner.webp",
       "title": "Como foi tirar minha primeira certificação, AWS Cloud Practitioner? 😬",
       "description": "O primeiro passo para conseguir ser um Solution Architect foi dado. Nesse artigo abordo, o que achei da minha primeira certificação em Cloud Computing, a AWS Cloud Practitioner, da Amazon Web Services (AWS). Também darei dicas do que usei, que facilitaram o meu desenvolvimento sobre o assunto, então não deixe de dar uma olhada, se você curte o assunto!"
     },
     {
-      "url": "https://www.linkedin.com/posts/andredevts_java-quarkus-microservice-activity-7177728781162323968-7kfG?utm_source=share&utm_medium=member_desktop",
+      "url": "https://www.linkedin.com/posts/devandrets_java-quarkus-microservice-activity-7177728781162323968-7kfG?utm_source=share&utm_medium=member_desktop",
       "image": "/assets/images/articles/quarkus.webp",
       "title": "Quarkus, o SuperSONIC que não é da SEGA",
       "description": "Você já ouviu falar no Quarkusio? É um negócio que te garanto que você ouvirá muito falar dele ainda. Que tal começar por aqui? Então, bora! 😆"
     },
     {
-      "url": "https://www.linkedin.com/posts/andredevts_it-cloud-aws-activity-7169693232795115520-w-DW?utm_source=share&utm_medium=member_desktop",
+      "url": "https://www.linkedin.com/posts/devandrets_it-cloud-aws-activity-7169693232795115520-w-DW?utm_source=share&utm_medium=member_desktop",
       "image": "/assets/images/articles/aws_restart.webp",
       "title": "AWS re/start o que é isso?",
       "description": "AWS re/start o que é isso? O que a Amazon Web Services (AWS) e a Escola da Nuvem têm a ver com isso? Vem comigo nesse artigo, que tu vai entender. 😅"
     },
     {
-      "url": "https://www.linkedin.com/posts/andredevts_it-api-apidog-activity-7147934575892111361-NU-w?utm_source=share&utm_medium=member_desktop",
+      "url": "https://www.linkedin.com/posts/devandrets_it-api-apidog-activity-7147934575892111361-NU-w?utm_source=share&utm_medium=member_desktop",
       "image": "/assets/images/articles/apidog.webp",
       "title": "A ferramenta que você precisava",
       "description": "Fala galera, venho aqui trazer para vocês, o meu primeiro artigo no LinkedIn. O primeiro, de muitos(assim espero 😅) artigos de coisas aleatórias que eu achar interessante na minha jornada como dev. A primeira delas é uma ferramenta pouca conhecida, que pode lhe ser útil no futuro, em seus projetos. 🙃"

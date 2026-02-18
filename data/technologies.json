@@ -5,20 +5,8 @@
       "title": "Node.js"
     },
     {
-      "image": "assets/images/index/technologies/nest.webp",
-      "title": "NestJS"
-    },
-    {
-      "image": "assets/images/index/technologies/react.webp",
-      "title": "React"
-    },
-    {
       "image": "assets/images/index/technologies/typescript.webp",
       "title": "TypeScript"
-    },
-    {
-      "image": "assets/images/index/technologies/javascript.webp",
-      "title": "JavaScript"
     },
     {
       "image": "assets/images/index/technologies/aws.webp",
@@ -29,24 +17,20 @@
       "title": "Docker"
     },
     {
-      "image": "assets/images/index/technologies/kafka.webp",
-      "title": "Kafka"
-    },
-    {
-      "image": "assets/images/index/technologies/terraform.webp",
-      "title": "Terraform"
-    },
-    {
-      "image": "assets/images/index/technologies/postgresql.webp",
-      "title": "PostgreSQL"
-    },
-    {
       "image": "assets/images/index/technologies/mongodb.webp",
       "title": "MongoDB"
     },
     {
-      "image": "assets/images/index/technologies/go.webp",
-      "title": "Go"
+      "image": "assets/images/index/technologies/rabbitmq.webp",
+      "title": "RabbitMQ"
+    },
+    {
+      "image": "assets/images/index/technologies/mysql.webp",
+      "title": "MySQL"
+    },
+    {
+      "image": "assets/images/index/technologies/grafana.webp",
+      "title": "Grafana"
     }
   ]
 }

@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "url": "#",
-      "image": "/assets/images/projects/embreve.webp",
-      "title": "Em breve",
-      "description": "Em breve"
-    },
-    {
       "url": "https://youtu.be/qmvzueH5ysU",
       "image": "/assets/images/videos/paraquemeolinux.webp",
       "title": "Para quem é o Linux?",
