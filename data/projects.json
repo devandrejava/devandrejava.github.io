@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "lorcana-chunks-study",
+      "title": "Lorcana Chunks Study",
+      "subtitle": "Fullstack Monorepo com IA & NestJS",
+      "description": "Arquitetura Monorepo corporativa estruturada com Nx, backend desacoplado em Nest.js e frontend reativo em React com TypeScript. Desenvolvido com auxílio ativo de IA Generativa para aceleração de testes e engenharia.",
+      "url": "https://github.com/devandrets/lorcana-chunks-study",
+      "tags": ["Nest.js", "Nx Monorepo", "React", "TypeScript", "IA Generativa"],
+      "featured": true,
+      "badge": "Mais Recente"
+    },
+    {
+      "id": "poc-fastify-nx-redis-grafana",
+      "title": "Fastify Enterprise Monorepo & Metrics",
+      "subtitle": "Alta Performance & Observabilidade",
+      "description": "Arquitetura de microsserviço de alta vazão com Fastify e Nx Monorepo. Implementação de cache em memória com Redis, persistência com MongoDB e telemetria completa via Grafana.",
+      "url": "https://github.com/devandrets/poc-fastify-nx-redis-grafana",
+      "tags": ["Fastify", "Nx Monorepo", "Redis", "MongoDB", "Grafana", "Docker"],
+      "featured": true,
+      "badge": "Enterprise"
+    },
+    {
+      "id": "terraform-aws-nodejs-serverless",
+      "title": "AWS Serverless IaC com Terraform",
+      "subtitle": "Infraestrutura como Código & Nuvem",
+      "description": "Automação completa de infraestrutura na nuvem AWS via Terraform (IaC). Provisionamento de AWS Lambda em Node.js, API Gateway, S3 e observabilidade no CloudWatch.",
+      "url": "https://github.com/devandrets/terraform-aws-nodejs-serverless",
+      "tags": ["AWS Lambda", "Terraform", "IaC", "Node.js", "CloudWatch"],
+      "featured": true,
+      "badge": "Cloud AWS"
+    },
+    {
+      "id": "poc-nodejs-mongo-rabbitmq",
+      "title": "Arquitetura Assíncrona com RabbitMQ",
+      "subtitle": "Mensageria Desacoplada & Event-Driven",
+      "description": "Comunicação entre serviços orientada a eventos. Padrão Publisher/Subscriber com RabbitMQ para processamento assíncrono resiliente e persistência NoSQL em MongoDB.",
+      "url": "https://github.com/devandrets/poc-nodejs-mongo-rabbitmq",
+      "tags": ["Node.js", "RabbitMQ", "MongoDB", "Event-Driven", "Docker"],
+      "featured": true,
+      "badge": "Mensageria"
+    },
+    {
+      "id": "api-node-express-vitest",
+      "title": "API RESTful com Zod, Prisma & Vitest",
+      "subtitle": "Qualidade de Código & Testes Automatizados",
+      "description": "API em camadas limpas com validação rigorosa de schemas de dados via Zod, persistência com Prisma ORM e suíte robusta de testes automatizados com Vitest.",
+      "url": "https://github.com/devandrets/api-node-express-vitest",
+      "tags": ["TypeScript", "Vitest", "Zod", "Prisma", "Clean Architecture"],
+      "featured": true,
+      "badge": "Qualidade / TDD"
+    }
+  ]
+}

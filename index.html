@@ -1,89 +1,658 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="shortcut icon"
-      href="../assets/images/icon.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Welcome 🖖🐧</title>
-  </head>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Valverde | Desenvolvedor Backend · Cloud AWS</title>
+  <meta name="description" content="Engenheiro de Software Backend especializado em Node.js, TypeScript, Cloud AWS e microsserviços. 3x AWS Certified." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
 
-  <body>
-    <header id="header-mobile" class="header-mobile"></header>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col">
 
-    <header id="header-mobile-sidebar" class="header-mobile-sidebar"></header>
+  <!-- Glow Background Accents -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-amber-600/5 rounded-full blur-3xl"></div>
+  </div>
 
-    <header id="header-desktop" class="header-desktop"></header>
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-blue-600 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          AV
+        </div>
+        <span class="font-semibold text-lg tracking-tight group-hover:text-indigo-400 transition-colors">
+          André Valverde
+        </span>
+      </a>
 
-    <main id="content" class="content">
-      <section class="banner-youtube">
-        <section class="text-banner">
-          <p class="chamada-youtube">
-            CONHEÇA UM POUCO MAIS SOBRE MIM!<br />VEJA UM VIDEO DE APRESENTAÇÃO.
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
+        <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
+        <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
+        <a href="#certificacoes" class="hover:text-white transition-colors">Certificações AWS</a>
+        <a href="#tecnologias" class="hover:text-white transition-colors">Stack</a>
+        <a href="pages/articles.html" class="hover:text-white transition-colors">Artigos</a>
+        <a href="pages/videos.html" class="hover:text-white transition-colors">Vídeos</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://github.com/devandrets" target="_blank" rel="noopener noreferrer" class="p-2 text-zinc-400 hover:text-white transition-colors" title="GitHub">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/devandrets" target="_blank" rel="noopener noreferrer" class="p-2 text-zinc-400 hover:text-white transition-colors" title="LinkedIn">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:devandrecontact@gmail.com" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm shadow-indigo-600/30 transition-all">
+          Contato
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400 hover:text-white" aria-label="Abrir Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden md:hidden px-4 pt-2 pb-6 border-t border-zinc-800 bg-zinc-950/95 space-y-3">
+      <a href="#sobre" class="block py-1.5 text-zinc-300 hover:text-white">Sobre</a>
+      <a href="#projetos" class="block py-1.5 text-zinc-300 hover:text-white">Projetos</a>
+      <a href="#certificacoes" class="block py-1.5 text-zinc-300 hover:text-white">Certificações AWS</a>
+      <a href="#tecnologias" class="block py-1.5 text-zinc-300 hover:text-white">Stack</a>
+      <a href="pages/articles.html" class="block py-1.5 text-zinc-300 hover:text-white">Artigos</a>
+      <a href="pages/videos.html" class="block py-1.5 text-zinc-300 hover:text-white">Vídeos</a>
+      <div class="pt-3 flex gap-3">
+        <a href="https://github.com/devandrets" target="_blank" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-zinc-800 text-zinc-200">GitHub</a>
+        <a href="https://www.linkedin.com/in/devandrets" target="_blank" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-zinc-800 text-zinc-200">LinkedIn</a>
+        <a href="mailto:devandrecontact@gmail.com" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-indigo-600 text-white">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="sobre" class="relative pt-12 pb-20 md:pt-20 md:pb-28 border-b border-zinc-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Disponível para oportunidades · Remoto (CLT / PJ)
+          </div>
+
+          <!-- Titles -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              André Valverde
+            </h1>
+            <h2 class="text-xl sm:text-2xl font-medium text-indigo-400 font-mono">
+              Desenvolvedor Backend · Cloud AWS
+            </h2>
+          </div>
+
+          <!-- Description -->
+          <p class="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl">
+            Bacharel em <strong>Sistemas de Informação</strong> pela PUC Minas com mais de 3 anos de experiência em engenharia de software backend. Especializado na construção de APIs RESTful de alta escala com <strong>Node.js</strong>, <strong>TypeScript</strong>, arquitetura em nuvem <strong>AWS</strong> e mensageria assíncrona.
           </p>
-          <a
-            href="https://youtu.be/66xFo5giI5A"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <section id="button-youtube">
-              <img src="assets/images/index/youtube.webp" alt="" srcset="" />
-              <p>Youtube</p>
-            </section>
+
+          <!-- Highlights Chips -->
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300">
+              🏆 3x AWS Certified
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300">
+              ⚡ Fastify & NestJS
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300">
+              📨 Kafka & RabbitMQ
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300">
+              🤖 GenAI no ciclo dev
+            </span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#projetos" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/25 transition-all hover:scale-[1.02]">
+              Ver Projetos
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            
+            <a href="https://github.com/devandrets" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+
+            <a href="https://www.credly.com/users/devandrets/badges" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              Credly Oficial
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hero Photo -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-indigo-600 via-blue-500 to-amber-500 opacity-30 blur-xl group-hover:opacity-50 transition-opacity"></div>
+            <div class="relative w-72 sm:w-80 h-96 rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl">
+              <img src="assets/images/profile.jpg" alt="André Valverde" class="w-full h-full object-cover object-top filter contrast-[1.02]" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-center">
+                <span class="inline-block text-xs font-mono font-medium text-zinc-300 bg-zinc-900/90 border border-zinc-700/80 px-3 py-1 rounded-full backdrop-blur-sm">
+                  Belo Horizonte, MG · Remoto
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AWS Certifications Section -->
+  <section id="certificacoes" class="py-16 md:py-24 border-b border-zinc-800/80 bg-zinc-900/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <h2 class="text-xs font-mono font-bold tracking-wider uppercase text-indigo-400">
+          Reconhecimento & Competência
+        </h2>
+        <h3 class="text-3xl font-extrabold text-white">
+          Certificações Oficiais AWS
+        </h3>
+        <p class="text-sm sm:text-base text-zinc-400">
+          Credenciais técnicas emitidas pela Amazon Web Services e com verificação pública direta no Credly.
+        </p>
+      </div>
+
+      <!-- 3 Badges Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- SAA-C03 -->
+        <div class="rounded-2xl p-6 bg-zinc-900/80 border border-zinc-800 hover:border-indigo-500/50 transition-all flex flex-col items-center text-center group">
+          <a href="https://www.credly.com/badges/9fc88423-9b3f-4084-8e5d-77d1ffc44d0c/public_url" target="_blank" rel="noopener noreferrer" class="block group-hover:scale-105 transition-transform mb-4">
+            <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect Associate" class="w-32 h-32 object-contain" />
           </a>
-        </section>
-        <img
-          id="myphoto"
-          class="myphoto"
-          src="assets/images/index/myphoto.webp"
-          alt=""
-          srcset=""
-        />
-      </section>
-
-      <h2>Minhas características</h2>
-
-      <section id="myvalues" class="myvalues"></section>
-
-      <section class="aws">
-        <img
-          class="certified-cloud"
-          src="/assets/images/index/certifieds.webp"
-          alt="Certificações de André Valverde Desenvolvedor Java AWS"
-          srcset=""
-        />
-        <section class="aws-content">
-          <p>
-            Sou 3 vezes certificado pela AWS!<br />Veja todas as minhas certificações e
-            saiba mais sobre mim!
+          <h4 class="text-lg font-bold text-white mb-1">
+            Solutions Architect – Associate
+          </h4>
+          <span class="text-xs font-mono text-zinc-400 mb-3">SAA-C03 · 2025 – 2028</span>
+          <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+            Arquitetura resiliente, de alta disponibilidade, segura e com otimização de custos na nuvem AWS.
           </p>
-          <a
-            href="https://www.credly.com/users/andre-valverde.7133c793/badges#credly"
-            target="_blank"
-          >
-            <p>Veja Todas as certificações</p>
+          <a href="https://www.credly.com/badges/9fc88423-9b3f-4084-8e5d-77d1ffc44d0c/public_url" target="_blank" rel="noopener noreferrer" class="mt-auto text-xs font-semibold text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-1">
+            Verificar no Credly ↗
           </a>
-        </section>
-      </section>
+        </div>
 
-      <h2>Tecnologias que domino</h2>
+        <!-- DVA-C02 -->
+        <div class="rounded-2xl p-6 bg-zinc-900/80 border border-zinc-800 hover:border-indigo-500/50 transition-all flex flex-col items-center text-center group">
+          <a href="https://www.credly.com/badges/8c8b0a1a-b66f-45a8-a0c0-e0b065733e0c/public_url" target="_blank" rel="noopener noreferrer" class="block group-hover:scale-105 transition-transform mb-4">
+            <img src="https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer Associate" class="w-32 h-32 object-contain" />
+          </a>
+          <h4 class="text-lg font-bold text-white mb-1">
+            Developer – Associate
+          </h4>
+          <span class="text-xs font-mono text-zinc-400 mb-3">DVA-C02 · 2025 – 2028</span>
+          <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+            Desenvolvimento e deployment de aplicações serverless, APIs, SDKs e pipelines de CI/CD nativos na AWS.
+          </p>
+          <a href="https://www.credly.com/badges/8c8b0a1a-b66f-45a8-a0c0-e0b065733e0c/public_url" target="_blank" rel="noopener noreferrer" class="mt-auto text-xs font-semibold text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-1">
+            Verificar no Credly ↗
+          </a>
+        </div>
 
-      <section id="technologies" class="technologies"></section>
-    </main>
+        <!-- CLF-C02 -->
+        <div class="rounded-2xl p-6 bg-zinc-900/80 border border-zinc-800 hover:border-indigo-500/50 transition-all flex flex-col items-center text-center group">
+          <a href="https://www.credly.com/badges/60ba7641-64bb-44f2-9be7-48d6e7395066/public_url" target="_blank" rel="noopener noreferrer" class="block group-hover:scale-105 transition-transform mb-4">
+            <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" class="w-32 h-32 object-contain" />
+          </a>
+          <h4 class="text-lg font-bold text-white mb-1">
+            Cloud Practitioner
+          </h4>
+          <span class="text-xs font-mono text-zinc-400 mb-3">CLF-C02 · 2024 – 2028</span>
+          <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+            Domínio abrangente da infraestrutura global, princípios de segurança e governança de serviços da nuvem.
+          </p>
+          <a href="https://www.credly.com/badges/60ba7641-64bb-44f2-9be7-48d6e7395066/public_url" target="_blank" rel="noopener noreferrer" class="mt-auto text-xs font-semibold text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-1">
+            Verificar no Credly ↗
+          </a>
+        </div>
 
-    <footer id="footer" class="footer"></footer>
-  </body>
+      </div>
+
+      <!-- Credly Profile Banner Link -->
+      <div class="mt-10 text-center">
+        <a href="https://www.credly.com/users/devandrets/badges" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white transition-all">
+          <span>Verificar todas as credenciais no perfil oficial do Credly</span>
+          <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projetos" class="py-16 md:py-24 border-b border-zinc-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div class="space-y-2">
+          <h2 class="text-xs font-mono font-bold tracking-wider uppercase text-indigo-400">
+            Portfólio de Engenharia
+          </h2>
+          <h3 class="text-3xl font-extrabold text-white">
+            Projetos em Destaque
+          </h3>
+          <p class="text-sm sm:text-base text-zinc-400 max-w-xl">
+            Aplicações reais, monorepos corporativos, automação de nuvem e microsserviços desacoplados.
+          </p>
+        </div>
+        <a href="https://github.com/devandrets?tab=repositories" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+          Ver todos no GitHub ↗
+        </a>
+      </div>
+
+      <!-- Projects Container -->
+      <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Project 1: Lorcana Chunks Study (Destaque Principal) -->
+        <div class="rounded-2xl p-6 bg-zinc-900/70 border border-indigo-500/30 hover:border-indigo-500/60 hover:bg-zinc-900 transition-all flex flex-col justify-between group shadow-lg shadow-indigo-950/20">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border bg-indigo-500/10 text-indigo-400 border-indigo-500/30">
+                ✨ Mais Recente / IA
+              </span>
+              <a href="https://github.com/devandrets/lorcana-chunks-study" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors" title="Ver no GitHub">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                Lorcana Chunks Study
+              </h4>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5">
+                Fullstack Monorepo com IA & Nest.js
+              </p>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Arquitetura Monorepo corporativa estruturada com Nx, backend desacoplado em Nest.js e frontend reativo em React com TypeScript. Desenvolvido com auxílio de IA Generativa para aceleração de engenharia e testes.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Nest.js</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Nx Monorepo</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">React</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">TypeScript</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-indigo-300 border border-indigo-900/60">IA Generativa</span>
+            </div>
+            <div class="pt-2 border-t border-zinc-800/80">
+              <a href="https://github.com/devandrets/lorcana-chunks-study" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+                <span>Ver repositório no GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Fastify Enterprise Monorepo -->
+        <div class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border bg-zinc-800 text-zinc-300 border-zinc-700">
+                Enterprise
+              </span>
+              <a href="https://github.com/devandrets/poc-fastify-nx-redis-grafana" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors" title="Ver no GitHub">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                Fastify Enterprise Monorepo
+              </h4>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5">
+                Alta Performance & Observabilidade
+              </p>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Arquitetura de microsserviço de alta vazão com Fastify e Nx Monorepo. Implementação de cache em memória com Redis, persistência com MongoDB e telemetria completa via Grafana.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Fastify</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Nx Monorepo</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Redis</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">MongoDB</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Grafana</span>
+            </div>
+            <div class="pt-2 border-t border-zinc-800/80">
+              <a href="https://github.com/devandrets/poc-fastify-nx-redis-grafana" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+                <span>Ver repositório no GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: AWS Serverless Terraform -->
+        <div class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border bg-amber-500/10 text-amber-400 border-amber-500/30">
+                Cloud AWS
+              </span>
+              <a href="https://github.com/devandrets/terraform-aws-nodejs-serverless" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors" title="Ver no GitHub">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                AWS Serverless IaC
+              </h4>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5">
+                Infraestrutura como Código com Terraform
+              </p>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Automação completa de infraestrutura na nuvem AWS via Terraform (IaC). Provisionamento de AWS Lambda em Node.js, API Gateway, S3 e observabilidade no CloudWatch.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">AWS Lambda</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Terraform</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">IaC</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Node.js</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">CloudWatch</span>
+            </div>
+            <div class="pt-2 border-t border-zinc-800/80">
+              <a href="https://github.com/devandrets/terraform-aws-nodejs-serverless" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+                <span>Ver repositório no GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: RabbitMQ Event-Driven -->
+        <div class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border bg-zinc-800 text-zinc-300 border-zinc-700">
+                Mensageria
+              </span>
+              <a href="https://github.com/devandrets/poc-nodejs-mongo-rabbitmq" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors" title="Ver no GitHub">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                Arquitetura com RabbitMQ
+              </h4>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5">
+                Processamento Assíncrono & Eventos
+              </p>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Comunicação entre serviços orientada a eventos. Padrão Publisher/Subscriber com RabbitMQ para processamento assíncrono resiliente e persistência NoSQL em MongoDB.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Node.js</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">RabbitMQ</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">MongoDB</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Event-Driven</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Docker</span>
+            </div>
+            <div class="pt-2 border-t border-zinc-800/80">
+              <a href="https://github.com/devandrets/poc-nodejs-mongo-rabbitmq" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+                <span>Ver repositório no GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Vitest & Zod Clean API -->
+        <div class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border bg-emerald-500/10 text-emerald-400 border-emerald-500/30">
+                Qualidade / TDD
+              </span>
+              <a href="https://github.com/devandrets/api-node-express-vitest" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors" title="Ver no GitHub">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                API RESTful com Vitest & Zod
+              </h4>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5">
+                Contratos Estritos & Testes Automatizados
+              </p>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              API em camadas limpas com validação rigorosa de schemas de dados via Zod, persistência com Prisma ORM e suíte robusta de testes automatizados com Vitest.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">TypeScript</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Vitest</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Zod</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Prisma</span>
+              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-300 border border-zinc-800">Clean Architecture</span>
+            </div>
+            <div class="pt-2 border-t border-zinc-800/80">
+              <a href="https://github.com/devandrets/api-node-express-vitest" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+                <span>Ver repositório no GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="tecnologias" class="py-16 md:py-24 border-b border-zinc-800/80 bg-zinc-900/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <h2 class="text-xs font-mono font-bold tracking-wider uppercase text-indigo-400">
+          Ferramentas & Tecnologias
+        </h2>
+        <h3 class="text-3xl font-extrabold text-white">
+          Stack Técnica de Backend
+        </h3>
+        <p class="text-sm sm:text-base text-zinc-400">
+          Linguagens, frameworks, mensageria e serviços de nuvem utilizados no dia a dia.
+        </p>
+      </div>
+
+      <!-- Categories Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Backend & Runtimes -->
+        <div class="rounded-2xl p-6 bg-zinc-900/60 border border-zinc-800 space-y-4">
+          <div class="flex items-center gap-2 text-indigo-400 font-semibold text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <span>Backend & Runtimes</span>
+          </div>
+          <ul class="space-y-2 text-sm text-zinc-300">
+            <li class="flex items-center justify-between"><span>Node.js</span><span class="text-xs text-zinc-500 font-mono">Principal</span></li>
+            <li class="flex items-center justify-between"><span>TypeScript</span><span class="text-xs text-zinc-500 font-mono">Principal</span></li>
+            <li class="flex items-center justify-between"><span>Fastify</span><span class="text-xs text-zinc-500 font-mono">Framework</span></li>
+            <li class="flex items-center justify-between"><span>Nest.js</span><span class="text-xs text-zinc-500 font-mono">Framework</span></li>
+            <li class="flex items-center justify-between"><span>Express.js</span><span class="text-xs text-zinc-500 font-mono">Framework</span></li>
+            <li class="flex items-center justify-between"><span>Nx Monorepo</span><span class="text-xs text-zinc-500 font-mono">Tooling</span></li>
+          </ul>
+        </div>
+
+        <!-- Cloud & Infra -->
+        <div class="rounded-2xl p-6 bg-zinc-900/60 border border-zinc-800 space-y-4">
+          <div class="flex items-center gap-2 text-amber-400 font-semibold text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            <span>Cloud & DevOps</span>
+          </div>
+          <ul class="space-y-2 text-sm text-zinc-300">
+            <li class="flex items-center justify-between"><span>Amazon AWS</span><span class="text-xs text-amber-500/90 font-mono">3x Certificado</span></li>
+            <li class="flex items-center justify-between"><span>Docker</span><span class="text-xs text-zinc-500 font-mono">Containers</span></li>
+            <li class="flex items-center justify-between"><span>Linux</span><span class="text-xs text-zinc-500 font-mono">Daily-driver</span></li>
+            <li class="flex items-center justify-between"><span>Terraform</span><span class="text-xs text-zinc-500 font-mono">IaC</span></li>
+            <li class="flex items-center justify-between"><span>Bash / Shell</span><span class="text-xs text-zinc-500 font-mono">Automação</span></li>
+            <li class="flex items-center justify-between"><span>Git & GitHub</span><span class="text-xs text-zinc-500 font-mono">CI/CD</span></li>
+          </ul>
+        </div>
+
+        <!-- Bancos & Mensageria -->
+        <div class="rounded-2xl p-6 bg-zinc-900/60 border border-zinc-800 space-y-4">
+          <div class="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7M4 7c0-2 1.5-3 3.5-3h9c2 0 3.5 1 3.5 3M4 7s1.5 2 8 2 8-2 8-2"/></svg>
+            <span>Dados & Mensageria</span>
+          </div>
+          <ul class="space-y-2 text-sm text-zinc-300">
+            <li class="flex items-center justify-between"><span>PostgreSQL</span><span class="text-xs text-zinc-500 font-mono">Relacional</span></li>
+            <li class="flex items-center justify-between"><span>MongoDB</span><span class="text-xs text-zinc-500 font-mono">NoSQL</span></li>
+            <li class="flex items-center justify-between"><span>Redis</span><span class="text-xs text-zinc-500 font-mono">Cache / Key-value</span></li>
+            <li class="flex items-center justify-between"><span>RabbitMQ</span><span class="text-xs text-zinc-500 font-mono">Filas</span></li>
+            <li class="flex items-center justify-between"><span>Apache Kafka</span><span class="text-xs text-zinc-500 font-mono">Streaming/ETL</span></li>
+            <li class="flex items-center justify-between"><span>Grafana</span><span class="text-xs text-zinc-500 font-mono">Métricas</span></li>
+          </ul>
+        </div>
+
+        <!-- Qualidade & GenAI -->
+        <div class="rounded-2xl p-6 bg-zinc-900/60 border border-zinc-800 space-y-4">
+          <div class="flex items-center gap-2 text-purple-400 font-semibold text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span>Qualidade & IA</span>
+          </div>
+          <ul class="space-y-2 text-sm text-zinc-300">
+            <li class="flex items-center justify-between"><span>Vitest / Jest</span><span class="text-xs text-zinc-500 font-mono">Testes Unitários</span></li>
+            <li class="flex items-center justify-between"><span>Zod</span><span class="text-xs text-zinc-500 font-mono">Validação Schema</span></li>
+            <li class="flex items-center justify-between"><span>Prisma ORM</span><span class="text-xs text-zinc-500 font-mono">Modelagem</span></li>
+            <li class="flex items-center justify-between"><span>Google Gemini API</span><span class="text-xs text-zinc-500 font-mono">GenAI</span></li>
+            <li class="flex items-center justify-between"><span>Antigravity</span><span class="text-xs text-zinc-500 font-mono">Agentes IA</span></li>
+            <li class="flex items-center justify-between"><span>Clean Architecture</span><span class="text-xs text-zinc-500 font-mono">Padrões</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience / Background Section -->
+  <section class="py-16 md:py-24 border-b border-zinc-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-2xl mb-12 space-y-2">
+        <h2 class="text-xs font-mono font-bold tracking-wider uppercase text-indigo-400">
+          Trajetória Profissional
+        </h2>
+        <h3 class="text-3xl font-extrabold text-white">
+          Experiência Comprovada
+        </h3>
+      </div>
+
+      <div class="space-y-8 border-l-2 border-zinc-800 pl-6 ml-2">
+        
+        <!-- Mundiale -->
+        <div class="relative space-y-2">
+          <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-indigo-500 ring-4 ring-zinc-950"></span>
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h4 class="text-lg font-bold text-white">Mundiale · Squad de Inovação & POCs</h4>
+            <span class="text-xs font-mono text-zinc-400">Jan/2026 – Fev/2026</span>
+          </div>
+          <p class="text-xs font-medium text-indigo-400 font-mono">Desenvolvedor Backend (Fastify · Nx · RabbitMQ · GenAI)</p>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Atuação na squad de prototipagem e validação rápida de novas tecnologias para clientes enterprise (Unimed, Consórcio Mycon, ClubJoy). Desenvolvimento de serviços de mensageria com RabbitMQ e incorporação prática de GenAI (Gemini API e Antigravity) para aceleração de testes e refatorações.
+          </p>
+        </div>
+
+        <!-- ioasys / CVC Corp -->
+        <div class="relative space-y-2">
+          <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-indigo-500 ring-4 ring-zinc-950"></span>
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h4 class="text-lg font-bold text-white">ioasys · Squad CVC Corp</h4>
+            <span class="text-xs font-mono text-zinc-400">Jul/2021 – Mar/2023</span>
+          </div>
+          <p class="text-xs font-medium text-indigo-400 font-mono">Desenvolvedor Backend (Golang · Docker · Apache Kafka · ETL)</p>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Engenharia de esteiras de ETL e microsserviços de alto volume para processamento de pacotes de viagens com publicação de eventos em Apache Kafka. Atuação em War Rooms para resolução de gargalos de memória em produção e instrutor técnico no programa ioasys Camp.
+          </p>
+        </div>
+
+        <!-- Formação -->
+        <div class="relative space-y-2">
+          <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-indigo-500 ring-4 ring-zinc-950"></span>
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h4 class="text-lg font-bold text-white">PUC Minas</h4>
+            <span class="text-xs font-mono text-zinc-400">2019 – 2023</span>
+          </div>
+          <p class="text-xs font-medium text-indigo-400 font-mono">Bacharelado em Sistemas de Informação</p>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Formação superior com sólida base em engenharia de software, modelagem de banco de dados, redes e arquiteturas de sistemas distribuídos.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto py-12 bg-zinc-950 border-t border-zinc-850">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="space-y-1 text-center md:text-left">
+        <p class="text-sm font-semibold text-zinc-200">André Valverde · Engenharia de Backend</p>
+        <p class="text-xs text-zinc-500">Desenvolvido com TailwindCSS v4 & Vanilla JavaScript.</p>
+      </div>
+
+      <div class="flex items-center gap-4 text-sm text-zinc-400">
+        <a href="https://github.com/devandrets" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/devandrets" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="https://www.credly.com/users/devandrets/badges" target="_blank" class="hover:text-white transition-colors">Credly</a>
+        <a href="pages/articles.html" class="hover:text-white transition-colors">Artigos</a>
+        <a href="pages/videos.html" class="hover:text-white transition-colors">Vídeos</a>
+      </div>
+
+    </div>
+  </footer>
 
   <script src="index.js"></script>
+</body>
 </html>

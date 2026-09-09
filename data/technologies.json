@@ -2,35 +2,58 @@
   "items": [
     {
       "image": "assets/images/index/technologies/node.webp",
-      "title": "Node.js"
+      "title": "Node.js",
+      "category": "Backend"
     },
     {
       "image": "assets/images/index/technologies/typescript.webp",
-      "title": "TypeScript"
+      "title": "TypeScript",
+      "category": "Linguagem"
+    },
+    {
+      "image": "assets/images/index/technologies/nest.webp",
+      "title": "Nest.js",
+      "category": "Backend"
     },
     {
       "image": "assets/images/index/technologies/aws.webp",
-      "title": "AWS"
+      "title": "Cloud AWS",
+      "category": "Cloud"
     },
     {
       "image": "assets/images/index/technologies/docker.webp",
-      "title": "Docker"
+      "title": "Docker",
+      "category": "DevOps"
+    },
+    {
+      "image": "assets/images/index/technologies/postgresql.webp",
+      "title": "PostgreSQL",
+      "category": "Bancos de Dados"
     },
     {
       "image": "assets/images/index/technologies/mongodb.webp",
-      "title": "MongoDB"
+      "title": "MongoDB",
+      "category": "Bancos de Dados"
+    },
+    {
+      "image": "assets/images/index/technologies/kafka.webp",
+      "title": "Apache Kafka",
+      "category": "Mensageria"
     },
     {
       "image": "assets/images/index/technologies/rabbitmq.webp",
-      "title": "RabbitMQ"
-    },
-    {
-      "image": "assets/images/index/technologies/mysql.webp",
-      "title": "MySQL"
+      "title": "RabbitMQ",
+      "category": "Mensageria"
     },
     {
       "image": "assets/images/index/technologies/grafana.webp",
-      "title": "Grafana"
+      "title": "Grafana",
+      "category": "Observabilidade"
+    },
+    {
+      "image": "assets/images/index/technologies/git.webp",
+      "title": "Git & CI/CD",
+      "category": "DevOps"
     }
   ]
 }

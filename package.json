@@ -1,0 +1,26 @@
+{
+  "name": "devandrets.github.io",
+  "version": "1.0.0",
+  "description": "Um site simples e direto mostrando um pouco sobre mim, usando HTML, CSS e Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i src/input.css -o assets/css/style.css --minify",
+    "watch:css": "tailwindcss -i src/input.css -o assets/css/style.css --watch",
+    "build": "npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devandrets/devandrets.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/devandrets/devandrets.github.io/issues"
+  },
+  "homepage": "https://github.com/devandrets/devandrets.github.io#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3"
+  }
+}

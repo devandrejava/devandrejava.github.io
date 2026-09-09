@@ -3,8 +3,9 @@
     {
       "url": "https://youtu.be/qmvzueH5ysU",
       "image": "/assets/images/videos/paraquemeolinux.webp",
-      "title": "Para quem é o Linux?",
-      "description": "Neste vídeo, vamos explorar as características do Linux e como ele se tornou uma escolha popular entre os desenvolvedores e entusiastas da tecnologia."
+      "title": "Para quem é o Linux no desenvolvimento?",
+      "description": "Explorando os fundamentos do kernel Linux, linha de comando e por que o ambiente UNIX é o padrão da indústria para desenvolvedores backend e nuvem.",
+      "tag": "Linux & DevOps"
     }
   ]
 }

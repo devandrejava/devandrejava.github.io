@@ -1,311 +1,167 @@
-async function getTemplateHeaderDesktop() {
-  const response = await fetch("/components/header-component.html");
-  const header = await response.text();
-  const section = document.createElement("section");
+// Mobile Menu Toggle
+function setupMobileMenu() {
+  const btn = document.getElementById("mobile-menu-btn");
+  const drawer = document.getElementById("mobile-drawer");
+  
+  if (btn && drawer) {
+    btn.addEventListener("click", () => {
+      drawer.classList.toggle("hidden");
+    });
 
-  section.innerHTML = header;
-
-  return section.querySelector("#container-header").content;
-}
-
-async function getComponentHeaderDesktop() {
-  const element = await getTemplateHeaderDesktop();
-
-  document
-    .getElementById("header-desktop")
-    .appendChild(element.cloneNode(true));
-}
-
-async function getTemplateHeaderMobile() {
-  const response = await fetch("/components/header-mobile-component.html");
-  const template = await response.text();
-  const header = document.createElement("header");
-
-  header.innerHTML = template;
-
-  return header.querySelector("#template-wrapper-header-mobile").content;
-}
-
-async function getComponentHeaderMobile() {
-  const element = await getTemplateHeaderMobile();
-
-  document.getElementById("header-mobile").appendChild(element.cloneNode(true));
-}
-
-async function getTemplateHeaderMobileSidebar() {
-  const response = await fetch(
-    "/components/header-mobile-sidebar-component.html"
-  );
-  const template = await response.text();
-
-  const header = document.createElement("header");
-  header.innerHTML = template;
-
-  return header.querySelector("#template-wrapper-header-mobile-sidebar")
-    .content;
-}
-
-async function getComponentHeaderMobileSidebar() {
-  const element = await getTemplateHeaderMobileSidebar();
-
-  document
-    .getElementById("header-mobile-sidebar")
-    .appendChild(element.cloneNode(true));
-}
-
-async function getTemplateMyValues() {
-  const response = await fetch("/components/myvalues-component.html");
-  const myvalues = await response.text();
-  const section = document.createElement("section");
-
-  section.innerHTML = myvalues;
-
-  return section.querySelector("#container-myvalues");
-}
-
-async function getJsonMyValues() {
-  const template = await getTemplateMyValues();
-  const response = await fetch("/data/myvalues.json");
-  const myvalues = await response.json();
-  const container = document.getElementById("myvalues");
-
-  myvalues["items"].forEach((element) => {
-    let component = template.content.cloneNode(true);
-
-    component.querySelector(".content-title-image-myvalues").src =
-      element.image;
-    component.querySelector(".content-title-text-myvalues").innerHTML =
-      element.title;
-    component.querySelector(".context-text-myvalues").innerHTML =
-      element.description;
-
-    container.appendChild(component);
-  });
-
-  return container;
-}
-
-async function getTemplateTechnologies() {
-  const response = await fetch("/components/technologies-component.html");
-  const technologies = await response.text();
-  const section = document.createElement("section");
-
-  section.innerHTML = technologies;
-
-  return section.querySelector("#container-technologies");
-}
-
-async function getJsonTechnologies() {
-  const template = await getTemplateTechnologies();
-  const response = await fetch("/data/technologies.json");
-  const technologies = await response.json();
-  const container = document.getElementById("technologies");
-
-  technologies["items"].forEach((element) => {
-    let component = template.content.cloneNode(true);
-
-    component.querySelector(".content-title-image-technologies").src =
-      element.image;
-    component.querySelector(".content-title-text-technologies").innerHTML =
-      element.title;
-
-    container.appendChild(component);
-  });
-
-  return container;
-}
-
-async function getTemplateFooter() {
-  const response = await fetch("/components/footer-component.html");
-  const footer = await response.text();
-  const section = document.createElement("section");
-
-  section.innerHTML = footer;
-
-  return section.querySelector("#container-footer").content;
-}
-
-async function getComponentFooter() {
-  const template = await getTemplateFooter();
-
-  document.getElementById("footer").appendChild(template.cloneNode(true));
-}
-
-async function getTemplateContent() {
-  const template = await fetch("/components/content-component.html");
-  const content = await template.text();
-  const a = document.createElement("a");
-
-  a.innerHTML = content;
-
-  return a.querySelector("#container-content");
-}
-
-async function getComponentContent() {
-  const template = await getTemplateContent();
-  const container = document.getElementById("content");
-
-  const path = window.location.pathname.split("/").pop();
-
-  let data = "";
-
-  if (path == "projects.html") {
-    data = await fetch("/data/projects.json");
-
-    setTimeout(() => {
-      for (let index = 0; index < container.children.length; index++) {
-        container.children.item(index).style.height = "25rem";
-      }
-    }, 1);
+    drawer.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        drawer.classList.add("hidden");
+      });
+    });
   }
-
-  if (path == "articles.html") {
-    data = await fetch("/data/articles.json");
-  }
-
-  if (path == "videos.html") {
-    data = await fetch("/data/videos.json");
-
-    setTimeout(() => {
-      for (let index = 0; index < container.children.length; index++) {
-        container.children.item(index).style.height = "25rem";
-      }
-    }, 1);
-  }
-
-  const items = await data.json();
-
-  items["items"].forEach((element) => {
-    let component = template.content.cloneNode(true);
-
-    component.querySelector(".content-container").href = element.url;
-    component.querySelector(".content-image").src = element.image;
-    component.querySelector(".content-container-title").innerHTML =
-      element.title;
-    component.querySelector(".content-container-description").innerHTML =
-      element.description;
-
-    container.appendChild(component);
-  });
-
-  return container;
 }
 
-function onClickMenuOpenSidebar() {
-  const observer = new MutationObserver(() => {
-    const header = document.getElementById("header-mobile");
+// Render Featured Projects on index.html
+async function renderProjects() {
+  const container = document.getElementById("projects-container");
+  if (!container || container.children.length > 0) return;
 
-    const sidebar = document.getElementById("header-mobile-sidebar");
+  try {
+    const res = await fetch("data/projects.json");
+    if (!res.ok) throw new Error("Erro ao carregar projetos");
+    const data = await res.json();
 
-    sidebar.classList.remove("header-mobile-sidebar");
+    container.innerHTML = data.items.map(project => {
+      const isLorcana = project.id === "lorcana-chunks-study";
+      const badgeColor = isLorcana
+        ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/30"
+        : "bg-zinc-800 text-zinc-300 border-zinc-700";
 
-    const main = document.getElementById("content");
+      return `
+        <div class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border ${badgeColor}">
+                ${project.badge || "Backend"}
+              </span>
+              <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors" title="Ver no GitHub">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
 
-    if (header && sidebar) {
-      header
-        .querySelector("#template-wrapper-logo-menu")
-        .addEventListener("click", () => {
-          if (main !== null) {
-            main.style.display = "none";
-          }
+            <div>
+              <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                ${project.title}
+              </h4>
+              <p class="text-xs font-mono text-zinc-400 mt-0.5">
+                ${project.subtitle}
+              </p>
+            </div>
 
-          sidebar.querySelector(
-            "#template-header-mobile-sidebar"
-          ).style.cssText = `
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-    `;
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              ${project.description}
+            </p>
+          </div>
 
-          header.style.display = "none";
-        });
+          <div class="pt-6 space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              ${project.tags.map(tag => `
+                <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-950 text-zinc-400 border border-zinc-800">
+                  ${tag}
+                </span>
+              `).join('')}
+            </div>
 
-      observer.disconnect();
-    }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-}
-
-function onClickMenuCloseSidebar() {
-  const observer = new MutationObserver(() => {
-    const header = document.getElementById("header-mobile");
-
-    const sidebar = document.getElementById("header-mobile-sidebar");
-
-    const main = document.getElementById("content");
-
-    if (header && sidebar) {
-      sidebar
-        .querySelector("#template-header-mobile-close")
-        .addEventListener("click", () => {
-          sidebar.querySelector(
-            "#template-header-mobile-sidebar"
-          ).style.cssText = `
-          display: none;
+            <div class="pt-2 border-t border-zinc-800/80">
+              <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+                <span>Ver repositório</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
       `;
-
-          if (main !== null) {
-            main.style.display = "block";
-          }
-
-          header.style.display = "block";
-        });
-    }
-
-    observer.disconnect();
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-}
-
-function checkWindowSize() {
-  const element = document.getElementById("header-mobile");
-  const element2 = document.getElementById("header-mobile-sidebar");
-
-  if (window.innerWidth > 768) {
-    element.style.display = "none";
-    element2.style.display = "none";
-  } else {
-    element.style.display = "block";
-    element2.style.display = "block";
+    }).join('');
+  } catch (err) {
+    console.error("Erro ao carregar projetos:", err);
   }
 }
 
-function onChangemyphotoWhenMouseWillInButton() {
-  const button = document.getElementById("button-youtube");
-  const myphoto = document.getElementById("myphoto");
+// Render Articles on articles.html
+async function renderArticles() {
+  const container = document.getElementById("articles-container");
+  if (!container) return;
 
-  button.addEventListener("mouseenter", () => {
-    myphoto.src = "assets/images/index/myphoto2.webp";
-  });
+  try {
+    const res = await fetch("../data/articles.json");
+    if (!res.ok) throw new Error("Erro ao carregar artigos");
+    const data = await res.json();
 
-  button.addEventListener("mouseleave", () => {
-    myphoto.src = "assets/images/index/myphoto.webp";
-  });
+    container.innerHTML = data.items.map(article => `
+      <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
+        <div class="space-y-3">
+          <div class="w-full h-44 rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800 flex items-center justify-center">
+            <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+            ${article.tag || "Artigo"}
+          </span>
+          <h4 class="text-base font-bold text-white group-hover:text-indigo-400 transition-colors">
+            ${article.title}
+          </h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            ${article.description}
+          </p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-zinc-800 text-xs font-semibold text-indigo-400 flex items-center gap-1">
+          Ler no LinkedIn ↗
+        </div>
+      </a>
+    `).join('');
+  } catch (err) {
+    console.error("Erro ao carregar artigos:", err);
+  }
 }
 
-// Verifica no carregamento da página
-window.addEventListener("load", checkWindowSize);
+// Render Videos on videos.html
+async function renderVideos() {
+  const container = document.getElementById("videos-container");
+  if (!container) return;
 
-// Verifica sempre que a janela for redimensionada
-window.addEventListener("resize", checkWindowSize);
+  try {
+    const res = await fetch("../data/videos.json");
+    if (!res.ok) throw new Error("Erro ao carregar vídeos");
+    const data = await res.json();
 
-function loadComponents() {
-  getJsonMyValues();
-  getJsonTechnologies();
-  getComponentFooter();
-  getComponentContent();
-  getComponentHeaderDesktop();
-  getComponentHeaderMobile();
-  getComponentHeaderMobileSidebar();
-  onClickMenuOpenSidebar();
-  onClickMenuCloseSidebar();
-  onChangemyphotoWhenMouseWillInButton();
-  checkWindowSize();
+    container.innerHTML = data.items.map(video => `
+      <a href="${video.url}" target="_blank" rel="noopener noreferrer" class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
+        <div class="space-y-3">
+          <div class="w-full h-48 rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800 flex items-center justify-center relative">
+            <img src="${video.image}" alt="${video.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/10 transition-all">
+              <div class="w-12 h-12 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono bg-red-500/10 text-red-400 border border-red-500/20">
+            ${video.tag || "Vídeo"}
+          </span>
+          <h4 class="text-base font-bold text-white group-hover:text-indigo-400 transition-colors">
+            ${video.title}
+          </h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            ${video.description}
+          </p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-zinc-800 text-xs font-semibold text-red-400 flex items-center gap-1">
+          Assistir no YouTube ↗
+        </div>
+      </a>
+    `).join('');
+  } catch (err) {
+    console.error("Erro ao carregar vídeos:", err);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", loadComponents);
+document.addEventListener("DOMContentLoaded", () => {
+  setupMobileMenu();
+  renderProjects();
+  renderArticles();
+  renderVideos();
+});
