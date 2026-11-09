@@ -27,10 +27,12 @@ async function renderProjects() {
     const data = await res.json();
 
     container.innerHTML = data.items.map(project => {
-      const isLorcana = project.id === "lorcana-chunks-study";
-      const badgeColor = isLorcana
-        ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/30"
-        : "bg-zinc-800 text-zinc-300 border-zinc-700";
+      const badgeColor = project.status === "in-progress"
+        ? "bg-amber-500/10 text-amber-300 border-amber-500/30"
+        : "bg-indigo-500/10 text-indigo-400 border-indigo-500/30";
+      const repositoryLink = project.url
+        ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300"><span>Ver repositório</span></a>`
+        : `<span class="text-xs font-medium text-amber-300">Implementação ainda não publicada</span>`;
 
       return `
         <div class="rounded-2xl p-6 bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 transition-all flex flex-col justify-between group">
@@ -39,9 +41,7 @@ async function renderProjects() {
               <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border ${badgeColor}">
                 ${project.badge || "Backend"}
               </span>
-              <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors" title="Ver no GitHub">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
+
             </div>
 
             <div>
@@ -68,10 +68,7 @@ async function renderProjects() {
             </div>
 
             <div class="pt-2 border-t border-zinc-800/80">
-              <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
-                <span>Ver repositório</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </a>
+              ${repositoryLink}
             </div>
           </div>
         </div>

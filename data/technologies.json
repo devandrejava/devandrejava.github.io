@@ -1,54 +1,39 @@
 {
   "items": [
     {
-      "image": "assets/images/index/technologies/node.webp",
-      "title": "Node.js",
-      "category": "Backend"
+      "image": "assets/images/index/technologies/java.svg",
+      "title": "Java (em estudo)",
+      "category": "Backend · Foco atual"
     },
     {
-      "image": "assets/images/index/technologies/typescript.webp",
-      "title": "TypeScript",
-      "category": "Linguagem"
-    },
-    {
-      "image": "assets/images/index/technologies/nest.webp",
-      "title": "Nest.js",
-      "category": "Backend"
+      "image": "assets/images/index/technologies/spring.svg",
+      "title": "Spring (em estudo)",
+      "category": "Framework · Foco atual"
     },
     {
       "image": "assets/images/index/technologies/aws.webp",
       "title": "Cloud AWS",
-      "category": "Cloud"
+      "category": "Experiência e certificações"
     },
     {
       "image": "assets/images/index/technologies/docker.webp",
       "title": "Docker",
-      "category": "DevOps"
+      "category": "Experiência anterior"
     },
     {
       "image": "assets/images/index/technologies/postgresql.webp",
       "title": "PostgreSQL",
-      "category": "Bancos de Dados"
-    },
-    {
-      "image": "assets/images/index/technologies/mongodb.webp",
-      "title": "MongoDB",
-      "category": "Bancos de Dados"
+      "category": "Banco relacional"
     },
     {
       "image": "assets/images/index/technologies/kafka.webp",
       "title": "Apache Kafka",
-      "category": "Mensageria"
+      "category": "Mensageria · Experiência anterior"
     },
     {
       "image": "assets/images/index/technologies/rabbitmq.webp",
       "title": "RabbitMQ",
-      "category": "Mensageria"
-    },
-    {
-      "image": "assets/images/index/technologies/grafana.webp",
-      "title": "Grafana",
-      "category": "Observabilidade"
+      "category": "Mensageria · Experiência anterior"
     },
     {
       "image": "assets/images/index/technologies/git.webp",
